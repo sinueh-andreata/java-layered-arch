@@ -1,8 +1,9 @@
-service:
+services:
   mysql:
     image: mysql
     ports:
-      - "3306:3306"
+      - "3307:3307"
+    container_name: mysql_java
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: demodb
