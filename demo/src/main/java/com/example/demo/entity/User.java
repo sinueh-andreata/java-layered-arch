@@ -13,9 +13,11 @@ import java.util.UUID;
 @Entity
 @Table(name = "users")
 public class User {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+
+    // db columns
+
+    @Id //id
+    @GeneratedValue(strategy = GenerationType.UUID) // id is UUID
     private UUID userId;
 
     @Column(name = "username", nullable = false, unique = true)
@@ -33,9 +35,11 @@ public class User {
     @UpdateTimestamp
     private Instant updatedTimestamp;
 
+    // user constructor padrao
     public User() {
     }
 
+    // metodo construtor personalizado
     public User(UUID userId, String username, String email, String password, Instant creationTimestamp, Instant updatedTimestamp) {
         this.userId = userId;
         this.username = username;
@@ -43,5 +47,9 @@ public class User {
         this.password = password;
         this.creationTimestamp = creationTimestamp;
         this.updatedTimestamp = updatedTimestamp;
+    }
+
+    public UUID getUserId() {
+        return userId;
     }
 }
