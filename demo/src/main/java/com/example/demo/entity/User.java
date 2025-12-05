@@ -40,8 +40,8 @@ public class User {
     }
 
     // metodo construtor personalizado
-    public User(UUID userId, String username, String email, String password, Instant creationTimestamp, Instant updatedTimestamp) {
-        this.userId = userId;
+
+    public User(String username, String email, String password, Instant creationTimestamp, Instant updatedTimestamp) {
         this.username = username;
         this.email = email;
         this.password = password;
