@@ -7,7 +7,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 
 import java.time.Instant;
-import java.util.UUID;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -17,8 +16,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID productId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long productId;
 
     @Column(name = "product_name", nullable = false)
     private String productName;
@@ -38,7 +37,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(UUID productId, String productName, int productPrice, int productStock, Instant creationTimestamp, Instant updatedTimestamp) {
+    public Product(Long productId, String productName, int productPrice, int productStock, Instant creationTimestamp, Instant updatedTimestamp) {
         this.productId = productId;
         this.productName = productName;
         this.productPrice = productPrice;
